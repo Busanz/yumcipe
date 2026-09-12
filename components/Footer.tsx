@@ -1,13 +1,12 @@
 import Image from 'next/image';
-import Navigation from './Navigation';
 import { FaFacebook, FaInstagram, FaPinterest } from 'react-icons/fa6';
 import { SiYoutubemusic } from 'react-icons/si';
 import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col h-full items-center bg-[url('/footer-bg-img.jpg')] bg-cover bg-center bg-no-repeat">
-      <div className="flex flex-col items-center w-full h-full bg-gray-800/80 z-100">
+    <footer className="flex flex-col items-center bg-[url('/footer-bg-img.jpg')] bg-cover bg-center bg-no-repeat">
+      <div className="flex flex-col items-center w-full bg-gray-800/80 z-100">
         <div className="w-70 h-36 relative mb-10">
           <Image
             src={'/logo-secondary.png'}

@@ -10,17 +10,12 @@ const HeaderWrapper = ({ children }: { children: ReactNode }) => {
   const { user } = useUserContext() as UserContextType;
   return (
     <>
-      {user ? (
-        <div className="flex flex-col w-full ">
+      {user! ? (
+        <div className="flex flex-col w-full px-25 pt-10">
           <Slogan />
-          <div className="flex w-full h-full px-25 py-10 gap-10 my-1">
-            <div className="grid grid-flow-col gap-2 place-items-center flex-1">
-              {children}
-            </div>
-          </div>
         </div>
       ) : (
-        <div className="flex w-full h-full px-25 py-10 gap-10 my-1">
+        <div className="flex w-full px-25 py-10 gap-10 my-1">
           <div className="grid grid-flow-col grid-rows-2 gap-2 place-items-center flex-1">
             {children}
           </div>

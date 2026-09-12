@@ -4,8 +4,8 @@ import './globals.css';
 import { UserProvider } from '@/contexts/userContext';
 
 import Footer from '@/components/Footer';
-import HeaderWrapper from '@/components/HeaderWrapper';
 import Navigation from '@/components/Navigation';
+import { CategoryProvider } from '@/contexts/categoryContext';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -33,11 +33,13 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${poiretOne.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col w-full">
+      <body className="min-h-screen flex flex-col w-full">
         <UserProvider>
-          <Navigation isOnFooter={true} />
-          {children}
-          <Footer />
+          <CategoryProvider>
+            <Navigation isOnFooter={true} />
+            <div className="flex flex-1 flex-col">{children}</div>
+            <Footer />
+          </CategoryProvider>
         </UserProvider>
       </body>
     </html>

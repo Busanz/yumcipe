@@ -25,13 +25,11 @@ const LandingPage = async () => {
   }
 
   return (
-    // <div className="flex w-full h-full px-25 py-10 gap-10 my-1">
-    // <div className="grid grid-flow-col grid-rows-2 gap-2 place-items-center flex-1">
     <>
       {recipes.map((recipe) => (
         <div
           key={recipe.idMeal}
-          className="relative w-full h-full max-w-90 aspect-square"
+          className="relative w-full max-w-90 aspect-square"
         >
           <Image
             src={recipe.strMealThumb}
@@ -44,7 +42,6 @@ const LandingPage = async () => {
         </div>
       ))}
     </>
-    // </div>
   );
 };
 export default LandingPage;

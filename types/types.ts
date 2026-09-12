@@ -1,8 +1,9 @@
 export type UserType = {
   username: string;
   password: string;
-  category: string;
+  category: string[];
   receip: ReceipeType[] | null;
+  fullName: string;
 };
 
 export type ReceipeType = {
@@ -22,4 +23,9 @@ export type CategoryType = {
   strCategory: string;
   strCategoryThumb: string;
   strCategoryDescription: string;
+};
+
+export type CategoryContextType = {
+  categories: CategoryType[] | null;
+  setCategories: (categories: CategoryType[] | null) => void;
 };
