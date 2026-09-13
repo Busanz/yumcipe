@@ -16,7 +16,7 @@ const HeaderWrapper = ({ children }: { children: ReactNode }) => {
         </div>
       ) : (
         <div className="flex w-full px-25 py-10 gap-10 my-1">
-          <div className="grid grid-flow-col grid-rows-2 gap-2 place-items-center flex-1">
+          <div className="grid grid-flow-col grid-rows-2 gap-5 flex-1 place-items-center">
             {children}
           </div>
           <div className="flex w-full flex-1">

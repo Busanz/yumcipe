@@ -17,10 +17,10 @@ const RecipiesPage = async ({ params }: { params: { category: string } }) => {
   const firstTenRecepies: ReceipeType[] =
     allRecipiesByCategory.slice(0, 8) ?? [];
 
-  const handleLoadMoreRecipies = () => {};
+  // const handleLoadMoreRecipies = () => {};
 
   return (
-    <div className="flex flex-wrap px-25 py-15 justify-center gap-5">
+    <div className="flex flex-wrap py-15 justify-center gap-5">
       {firstTenRecepies &&
         firstTenRecepies.map((item) => (
           <RecipeCard key={item.idMeal} {...item} strCategory={strCategory} />

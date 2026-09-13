@@ -56,7 +56,7 @@ const Navigation = ({ isOnFooter = false }: NavigationProps) => {
             Categories
           </Link>
           <Link className="nav-links" href={'/recipes'}>
-            Recipes
+            Recipe
           </Link>
           <button
             className="bg-text/80 rounded-lg text-gray-700 px-4 py-1 cursor-pointer"

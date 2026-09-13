@@ -11,7 +11,7 @@ const RecipeCard = ({
 }: ReceipeType) => {
   return (
     <div className="flex flex-col w-full max-w-80 rounded-xl bg-primary/10 ">
-      <Link href={`recipe/${idMeal}`}>
+      <Link href={`/recipes/${idMeal}`}>
         <div className="relative h-80 w-full ">
           <Image
             src={strMealThumb}

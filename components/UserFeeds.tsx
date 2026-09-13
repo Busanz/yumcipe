@@ -20,7 +20,7 @@ const UserFeeds = () => {
   );
 
   return (
-    <div className="flex flex-col w-full px-25 items-center">
+    <div className="flex flex-col w-full items-center">
       {user && (
         <>
           <h1 className="text-center font-poiret text-primary text-2xl font-extrabold pt-5">

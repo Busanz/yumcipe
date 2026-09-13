@@ -13,6 +13,14 @@ export type ReceipeType = {
   strCategory: string;
 };
 
+export type FullReceipeType = ReceipeType & {
+  strCountry: string;
+  strInstructions: string;
+  strTags: string;
+  strYoutube: string;
+  ingredients: string[];
+};
+
 export type UserContextType = {
   user: UserType | null;
   setUser: (user: UserType | null) => void;

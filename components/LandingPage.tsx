@@ -29,7 +29,7 @@ const LandingPage = async () => {
       {recipes.map((recipe) => (
         <div
           key={recipe.idMeal}
-          className="relative w-full max-w-90 aspect-square"
+          className="relative w-full max-w-80 aspect-square"
         >
           <Image
             src={recipe.strMealThumb}
