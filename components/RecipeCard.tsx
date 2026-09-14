@@ -1,14 +1,32 @@
-import type { ReceipeType } from '@/types/types';
+'use client';
+
+import type { RecipeType, UserContextType } from '@/types/types';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FiHeart } from 'react-icons/fi';
+import { useUserContext } from '@/contexts/userContext';
 
 const RecipeCard = ({
   idMeal,
   strMeal,
   strMealThumb,
   strCategory,
-}: ReceipeType) => {
+}: RecipeType) => {
+  const { user, setUser } = useUserContext() as UserContextType;
+  const isAdded: boolean = !!user?.recipes?.some(
+    (item) => item.idMeal === idMeal,
+  );
+
+  const handleToggleRecipe = () => {
+    if (!user) return;
+    const currentRecipies: RecipeType[] = user?.recipes ?? [];
+    const updatedRecipies = isAdded
+      ? currentRecipies.filter((item) => item.idMeal !== idMeal)
+      : [...currentRecipies, { idMeal, strMeal, strMealThumb, strCategory }];
+
+    setUser({ ...user, recipes: updatedRecipies });
+  };
+
   return (
     <div className="flex flex-col w-full max-w-80 rounded-xl bg-primary/10 ">
       <Link href={`/recipes/${idMeal}`}>
@@ -31,8 +49,8 @@ const RecipeCard = ({
           size={30}
           strokeWidth={0.75}
           stroke="#02653a"
-          // fill={isAdded ? '#02653a' : '#02653a00'}
-          // onClick={handleAddCategory}
+          fill={isAdded ? '#02653a' : '#02653a00'}
+          onClick={handleToggleRecipe}
           className="cursor-pointer"
         />
       </div>

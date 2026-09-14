@@ -1,5 +1,5 @@
 import RecipeCard from '@/components/RecipeCard';
-import { ReceipeType } from '@/types/types';
+import { RecipeType } from '@/types/types';
 
 const RecipiesPage = async ({ params }: { params: { category: string } }) => {
   const { category } = await params;
@@ -14,13 +14,13 @@ const RecipiesPage = async ({ params }: { params: { category: string } }) => {
 
   const data = await responce.json();
   const allRecipiesByCategory = data.meals ?? [];
-  const firstTenRecepies: ReceipeType[] =
+  const firstTenRecepies: RecipeType[] =
     allRecipiesByCategory.slice(0, 8) ?? [];
 
   // const handleLoadMoreRecipies = () => {};
 
   return (
-    <div className="flex flex-wrap py-15 justify-center gap-5">
+    <div className="flex flex-wrap py-15 px-25 justify-center gap-5">
       {firstTenRecepies &&
         firstTenRecepies.map((item) => (
           <RecipeCard key={item.idMeal} {...item} strCategory={strCategory} />

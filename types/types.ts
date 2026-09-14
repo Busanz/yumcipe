@@ -2,18 +2,18 @@ export type UserType = {
   username: string;
   password: string;
   category: string[];
-  receip: ReceipeType[] | null;
+  recipes: RecipeType[] | null;
   fullName: string;
 };
 
-export type ReceipeType = {
+export type RecipeType = {
   idMeal: string;
   strMeal: string;
   strMealThumb: string;
   strCategory: string;
 };
 
-export type FullReceipeType = ReceipeType & {
+export type FullRecipeType = RecipeType & {
   strCountry: string;
   strInstructions: string;
   strTags: string;

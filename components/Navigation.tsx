@@ -22,16 +22,16 @@ const Navigation = ({ isOnFooter = false }: NavigationProps) => {
       className={`flex ${isOnFooter ? 'bg-primary/80 text-gray-300 py-1 px-25 font-light' : 'text-[#FFDE59] py-5 px-25 font-extralight'}  text-xl w-full gap-5 ${user ? 'justify-between' : 'justify-center'} items-center`}
     >
       {!user ? (
-        <Link href={'/'} className="shrink-0">
+        <div className="shrink-0">
           <Image
             src={`/logo-secondary.png`}
             alt="logo secondary of website"
             width={200}
             height={200}
             loading="eager"
-            className="h-20 w-auto"
+            className="h-22 w-auto"
           />
-        </Link>
+        </div>
       ) : (
         <Link href={'/'} className="shrink-0">
           <Image
