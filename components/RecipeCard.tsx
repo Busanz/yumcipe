@@ -19,12 +19,12 @@ const RecipeCard = ({
 
   const handleToggleRecipe = () => {
     if (!user) return;
-    const currentRecipies: RecipeType[] = user?.recipes ?? [];
-    const updatedRecipies = isAdded
-      ? currentRecipies.filter((item) => item.idMeal !== idMeal)
-      : [...currentRecipies, { idMeal, strMeal, strMealThumb, strCategory }];
+    const currentRecipes: RecipeType[] = user?.recipes ?? [];
+    const updatedRecipes = isAdded
+      ? currentRecipes.filter((item) => item.idMeal !== idMeal)
+      : [...currentRecipes, { idMeal, strMeal, strMealThumb, strCategory }];
 
-    setUser({ ...user, recipes: updatedRecipies });
+    setUser({ ...user, recipes: updatedRecipes });
   };
 
   return (

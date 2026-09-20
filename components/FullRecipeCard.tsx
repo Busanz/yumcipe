@@ -27,8 +27,8 @@ const FullRecipeCard = ({ recipe }: { recipe: FullRecipeType }) => {
   };
 
   return (
-    <>
-      <div className="flex flex-col w-full max-w-2xl items-start py-8 px-5 bg-primary/20 my-8">
+    <section>
+      <div className="flex flex-col w-full max-w-2xl items-start pt-10 pb-15 px-5 bg-primary/20 my-8">
         <div className="text-xl md:text-2xl font-light text-primary">
           {recipe?.strMeal}
         </div>
@@ -60,7 +60,7 @@ const FullRecipeCard = ({ recipe }: { recipe: FullRecipeType }) => {
           className="cursor-pointer"
         />
       </div>
-    </>
+    </section>
   );
 };
 

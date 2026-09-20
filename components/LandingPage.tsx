@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { getFeaturedRecipes } from '@/utils/functions';
+import { getFeaturedRecipes } from '@/utils/api/functions';
 
 const LandingPage = async () => {
   const recipes = await getFeaturedRecipes();

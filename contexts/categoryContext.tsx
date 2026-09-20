@@ -1,6 +1,7 @@
 'use client';
 
 import { CategoryType, CategoryContextType } from '@/types/types';
+import { fetchCategories } from '@/utils/api/functions';
 import {
   useContext,
   useState,
@@ -16,16 +17,9 @@ export const CategoryProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const loadCategories = async () => {
-      try {
-        const responce = await fetch(
-          `${process.env.NEXT_PUBLIC_API_ENDPOINT}categories.php`,
-        );
-        const data = await responce.json();
-        setCategories(data.categories);
-      } catch (error) {
-        console.log(error);
-      }
+      setCategories(await fetchCategories());
     };
+
     loadCategories();
   }, []);
   return (

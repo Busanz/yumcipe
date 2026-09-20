@@ -15,9 +15,7 @@ const Slogan = () => {
             sizes="(max-width: 540px) 50vw, 25vw"
           />
         </div>
-        <p className="text-center font-poiret text-primary text-2xl font-extrabold">
-          Every recipe tells a story.
-        </p>
+        <h1 className="heading-1">Every recipe tells a story.</h1>
         <p className="text-center font-poiret text-primary text-2xl">
           Rasavattōru collects them from every corner of the earth.
         </p>

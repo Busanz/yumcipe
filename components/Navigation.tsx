@@ -18,55 +18,57 @@ const Navigation = ({ isOnFooter = false }: NavigationProps) => {
     router.push('/');
   };
   return (
-    <nav
-      className={`flex ${isOnFooter ? 'bg-primary/80 text-gray-300 py-1 px-25 font-light' : 'text-[#FFDE59] py-5 px-25 font-extralight'}  text-xl w-full gap-5 ${user ? 'justify-between' : 'justify-center'} items-center`}
-    >
-      {!user ? (
-        <div className="shrink-0">
-          <Image
-            src={`/logo-secondary.png`}
-            alt="logo secondary of website"
-            width={200}
-            height={200}
-            loading="eager"
-            className="h-22 w-auto"
-          />
-        </div>
-      ) : (
-        <Link href={'/'} className="shrink-0">
-          <Image
-            src={`/logo-secondary.png`}
-            alt="logo secondary of website"
-            width={200}
-            height={200}
-            loading="eager"
-            className="h-18 w-auto"
-          />
-        </Link>
-      )}
+    <header>
+      <nav
+        className={`flex ${isOnFooter ? 'bg-primary/80 text-gray-300 py-1 px-25 font-light' : 'text-[#FFDE59] py-5 px-25 font-extralight'}  text-xl w-full gap-5 ${user ? 'justify-between' : 'justify-center'} items-center`}
+      >
+        {!user ? (
+          <div className="shrink-0">
+            <Image
+              src={`/logo-secondary.png`}
+              alt="logo secondary of website"
+              width={200}
+              height={200}
+              loading="eager"
+              className="h-22 w-auto"
+            />
+          </div>
+        ) : (
+          <Link href={'/'} className="shrink-0">
+            <Image
+              src={`/logo-secondary.png`}
+              alt="logo secondary of website"
+              width={200}
+              height={200}
+              loading="eager"
+              className="h-18 w-auto"
+            />
+          </Link>
+        )}
 
-      {user && (
-        <div
-          className={`flex w-full ${!isOnFooter ? 'justify-center' : 'justify-end'} items-center gap-5`}
-        >
-          <Link className="nav-links" href={'/'}>
-            Home
-          </Link>
-          <Link className="nav-links" href={'/categories'}>
-            Categories
-          </Link>
-          <Link className="nav-links" href={'/recipes'}>
-            Recipe
-          </Link>
-          <button
-            className="bg-text/80 rounded-lg text-gray-700 px-4 py-1 cursor-pointer"
-            onClick={handleLogOut}
+        {user && (
+          <div
+            className={`flex w-full ${!isOnFooter ? 'justify-center' : 'justify-end'} items-center gap-5`}
           >
-            {user ? 'Log out' : ''}
-          </button>
-        </div>
-      )}
-    </nav>
+            <Link className="nav-links" href={'/'}>
+              Home
+            </Link>
+            <Link className="nav-links" href={'/categories'}>
+              Categories
+            </Link>
+            <Link className="nav-links" href={'/recipes'}>
+              Recipe
+            </Link>
+            <button
+              className="bg-text/80 rounded-lg text-gray-700 px-4 py-1 cursor-pointer"
+              onClick={handleLogOut}
+            >
+              {user ? 'Log out' : ''}
+            </button>
+          </div>
+        )}
+      </nav>
+    </header>
   );
 };
 

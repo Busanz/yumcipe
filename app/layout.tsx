@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
 import { CategoryProvider } from '@/contexts/categoryContext';
 import RefreshLoadRoot from '@/components/RefreshLoadRoot';
+import { ReactNode } from 'react';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -39,7 +40,9 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
           <RefreshLoadRoot />
           <CategoryProvider>
             <Navigation isOnFooter={true} />
-            <div className="flex flex-1 flex-col items-center">{children}</div>
+            <main className="flex flex-1 flex-col items-center">
+              {children}
+            </main>
             <Footer />
           </CategoryProvider>
         </UserProvider>
