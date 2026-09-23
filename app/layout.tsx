@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
 import { CategoryProvider } from '@/contexts/categoryContext';
 import RefreshLoadRoot from '@/components/RefreshLoadRoot';
-import { ReactNode } from 'react';
+import { BreadcrumbProvider } from '@/contexts/useBreadcrumbContext';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -39,11 +39,13 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
         <UserProvider>
           <RefreshLoadRoot />
           <CategoryProvider>
-            <Navigation isOnFooter={true} />
-            <main className="flex flex-1 flex-col items-center">
-              {children}
-            </main>
-            <Footer />
+            <BreadcrumbProvider>
+              <Navigation isOnFooter={true} />
+              <main className="flex flex-1 flex-col items-center">
+                {children}
+              </main>
+              <Footer />
+            </BreadcrumbProvider>
           </CategoryProvider>
         </UserProvider>
       </body>

@@ -39,10 +39,7 @@ const UserFeeds = () => {
                 <CategoryCard key={item.idCategory} {...item} />
               ))
             ) : (
-              <Link
-                href={'/categories'}
-                className="bg-primary/30 rounded-lg text-gray-700 hover:text-primary  px-10 py-3 cursor-pointer text-xl font-extralight"
-              >
+              <Link href={'/categories'} className="button-primary">
                 Selecet favorite categories
               </Link>
             )}
@@ -57,10 +54,7 @@ const UserFeeds = () => {
                 <RecipeCard key={item.idMeal} {...item} />
               ))
             ) : (
-              <Link
-                href={'/categories'}
-                className="bg-primary/30 rounded-lg text-gray-700 hover:text-primary  px-10 py-3 cursor-pointer text-xl font-extralight"
-              >
+              <Link href={'/categories'} className="button-primary">
                 Selecet favorite categories
               </Link>
             )}

@@ -1,5 +1,6 @@
 import CategoryHeader from '@/components/CategoryHeader';
 import RecipesList from '@/components/RecipesList';
+import SetBreadcrumbLabel from '@/components/SetBreadcrumbLabel';
 import { fetchRecipesByCategory } from '@/utils/api/functions';
 
 const RecipesByCategoryPage = async ({
@@ -13,6 +14,7 @@ const RecipesByCategoryPage = async ({
   console.log(allRecipesByCategory);
   return (
     <section>
+      <SetBreadcrumbLabel lastSegment={strCategory} />
       <CategoryHeader categorySelected={category} />
       <RecipesList recipes={allRecipesByCategory} strCategory={strCategory} />
     </section>

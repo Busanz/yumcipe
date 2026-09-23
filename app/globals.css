@@ -14,6 +14,7 @@
   --color-primary: #02653a;
   --color-secondary: #fd6303;
   --color-text: #f2f2f2;
+  --color-link-active: #f6d608;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-poiret: var(--font-poiret-one);
@@ -40,4 +41,8 @@ body {
 }
 .section-dec {
   @apply pb-10 text-lg font-light;
+}
+
+.button-primary {
+  @apply bg-primary/30 rounded-lg text-gray-700 hover:text-primary  px-10 py-3 cursor-pointer text-xl font-extralight;
 }

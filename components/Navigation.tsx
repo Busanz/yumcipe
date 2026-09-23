@@ -4,7 +4,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useUserContext } from '@/contexts/userContext';
 import { UserContextType } from '@/types/types';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
+import { nav_links } from '@/data/navigations';
 
 type NavigationProps = {
   isOnFooter?: boolean;
@@ -12,7 +13,9 @@ type NavigationProps = {
 
 const Navigation = ({ isOnFooter = false }: NavigationProps) => {
   const { user, setUser } = useUserContext() as UserContextType;
+  const pathname = usePathname();
   const router = useRouter();
+
   const handleLogOut = () => {
     setUser(null);
     router.push('/');
@@ -50,15 +53,22 @@ const Navigation = ({ isOnFooter = false }: NavigationProps) => {
           <div
             className={`flex w-full ${!isOnFooter ? 'justify-center' : 'justify-end'} items-center gap-5`}
           >
-            <Link className="nav-links" href={'/'}>
-              Home
-            </Link>
-            <Link className="nav-links" href={'/categories'}>
-              Categories
-            </Link>
-            <Link className="nav-links" href={'/recipes'}>
-              Recipe
-            </Link>
+            {nav_links.map((link, index) => {
+              const isActive =
+                link.href === '/'
+                  ? pathname === '/'
+                  : pathname === link.href || pathname.startsWith(link.href);
+              return (
+                <Link
+                  key={index}
+                  className={isActive ? 'text-link-active' : 'nav-links'}
+                  href={link.href}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+
             <button
               className="bg-text/80 rounded-lg text-gray-700 px-4 py-1 cursor-pointer"
               onClick={handleLogOut}

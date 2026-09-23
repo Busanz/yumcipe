@@ -37,3 +37,8 @@ export type CategoryContextType = {
   categories: CategoryType[] | null;
   setCategories: (categories: CategoryType[] | null) => void;
 };
+
+export type BreadcrumbContextType = {
+  lastSegment: string;
+  setLastSegment: (lastSegment: string) => void;
+};
