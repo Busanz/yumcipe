@@ -33,16 +33,16 @@ body {
 }
 
 .nav-links {
-  @applypx-1 py-1 cursor-pointer cursor-pointer;
+  @apply px-1 py-1 cursor-pointer font-light;
 }
 
 .heading-1 {
-  @apply text-center font-poiret text-primary text-2xl font-extrabold pb-5;
+  @apply text-center font-poiret text-primary text-xl md:text-2xl font-extrabold pb-5;
 }
 .section-dec {
-  @apply pb-10 text-lg font-light;
+  @apply pb-5 px-4 text-[1.1rem] md:text-lg font-light;
 }
 
 .button-primary {
-  @apply bg-primary/30 rounded-lg text-gray-700 hover:text-primary  px-10 py-3 cursor-pointer text-xl font-extralight;
+  @apply bg-primary/30 rounded-lg text-gray-700 hover:text-primary  px-10 py-3 cursor-pointer text-[1rem] md:text-[1.1rem] lg:text-xl font-light;
 }

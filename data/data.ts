@@ -1,4 +1,6 @@
-import { UserType } from '@/types/types';
+import { SocialLink, UserType } from '@/types/types';
+import { FaFacebook, FaInstagram, FaPinterest } from 'react-icons/fa';
+import { SiYoutubemusic } from 'react-icons/si';
 
 export const userCredentials: UserType[] = [
   {
@@ -9,15 +11,15 @@ export const userCredentials: UserType[] = [
     fullName: 'Buddhi Sandaruwan',
   },
   {
-    username: 'name2',
-    password: 'password2',
+    username: 'username1',
+    password: 'password1',
     category: [],
     recipes: null,
     fullName: 'Buddhi Sandaruwan',
   },
   {
-    username: 'name3',
-    password: 'password3',
+    username: 'username2',
+    password: 'password2',
     category: [],
     recipes: null,
     fullName: 'Buddhi Sandaruwan',
@@ -29,4 +31,11 @@ export const userCredentials: UserType[] = [
     recipes: null,
     fullName: 'Buddhi Sandaruwan',
   },
+];
+
+export const socialLinks: SocialLink[] = [
+  { name: 'Facebook', href: '/', icon: FaFacebook },
+  { name: 'YouTube Music', href: '/', icon: SiYoutubemusic },
+  { name: 'Instagram', href: '/', icon: FaInstagram },
+  { name: 'Pinterest', href: '/', icon: FaPinterest },
 ];

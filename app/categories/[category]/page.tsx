@@ -11,13 +11,14 @@ const RecipesByCategoryPage = async ({
   const { category } = await params;
   const strCategory = category.charAt(0).toUpperCase() + category.slice(1);
   const allRecipesByCategory = await fetchRecipesByCategory(strCategory);
-  console.log(allRecipesByCategory);
   return (
-    <section>
+    <>
       <SetBreadcrumbLabel lastSegment={strCategory} />
-      <CategoryHeader categorySelected={category} />
-      <RecipesList recipes={allRecipesByCategory} strCategory={strCategory} />
-    </section>
+      <section>
+        <CategoryHeader categorySelected={category} />
+        <RecipesList recipes={allRecipesByCategory} strCategory={strCategory} />
+      </section>
+    </>
   );
 };
 export default RecipesByCategoryPage;

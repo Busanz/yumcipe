@@ -39,7 +39,10 @@ const CategoriesPage = () => {
   };
 
   return (
-    <section ref={refSection} className="flex flex-col pt-10 px-25 pb-15">
+    <section
+      ref={refSection}
+      className="flex flex-col pt-8 lg:pt-10 px-5 lg:px-25 pb-15"
+    >
       <div className="flex flex-col items-center">
         <h1 className="heading-1">Discover by Categories</h1>
         <p className="section-dec">
@@ -47,7 +50,7 @@ const CategoriesPage = () => {
           personalized collection.
         </p>
       </div>
-      <div className="flex flex-wrap justify-center gap-5">
+      <div className="flex flex-wrap justify-center gap-1 sm:gap-2 md:gap-4 lg:gap-6 mx-2">
         {user &&
           categories! &&
           visibleCategories?.map((item) => (

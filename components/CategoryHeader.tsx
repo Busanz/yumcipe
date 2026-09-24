@@ -15,9 +15,9 @@ const CategoryHeader = ({ categorySelected }: CategoryHeaderProps) => {
   );
 
   return (
-    <div className="flex flex-col items-center pt-10 px-25">
-      <h1 className="heading-1">{`Explore the recipes by ${categorySelected}`}</h1>
-      <p className="section-dec w-full max-w-3xl">
+    <div className="flex flex-col w-full items-center pt-8 md:pt-10 px-5 md:px-25">
+      <h1 className="heading-1 w-full">{`Explore the recipes by ${categorySelected}`}</h1>
+      <p className="section-dec w-full md:max-w-3xl">
         {selectedCategory?.strCategoryDescription}
       </p>
     </div>

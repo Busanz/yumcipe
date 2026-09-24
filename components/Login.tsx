@@ -4,12 +4,14 @@ import { useUserContext } from '@/contexts/userContext';
 import { userCredentials } from '@/data/data';
 import { UserContextType } from '@/types/types';
 import Image from 'next/image';
-import { SetStateAction, useState } from 'react';
+import { SetStateAction, useEffect, useState } from 'react';
 
 const Login = () => {
   const { setUser } = useUserContext() as UserContextType;
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const [showGuestDetails, setShowGuestDetails] = useState<boolean>(false);
+  const [isLogin, setIsLogin] = useState<boolean>(false);
 
   const handleUsername = (e: { target: { value: SetStateAction<string> } }) => {
     setUsername(e.target.value);
@@ -24,12 +26,36 @@ const Login = () => {
     const logInUser = userCredentials.find(
       (item) => item.username === username && item.password === password,
     );
+    if (!logInUser) {
+      setIsLogin(true);
+      setUsername('');
+      setPassword('');
+    }
+
     if (logInUser) setUser(logInUser);
   };
 
+  const handleShowGuessDetails = () => {
+    setShowGuestDetails(!showGuestDetails);
+  };
+
+  useEffect(() => {
+    const timerCloseNotifaction = setTimeout(() => {
+      setIsLogin(false);
+    }, 2000);
+    return () => clearTimeout(timerCloseNotifaction);
+  }, [isLogin]);
+
+  useEffect(() => {
+    const timerCloseCredentials = setTimeout(() => {
+      setShowGuestDetails(false);
+    }, 3000);
+    return () => clearTimeout(timerCloseCredentials);
+  }, [showGuestDetails]);
+
   return (
     <form className="relative flex flex-col w-full items-center justify-center bg-[url('/login-bg-img.jpg')] bg-cover bg-center bg-no-repeat rounded-xl">
-      <div className="flex flex-col w-full max-w-[80%] max-h-[90%] my-10 bg-primary/50 rounded-2xl px-15 pt-2">
+      <div className="relative flex flex-col w-full max-w-[80%] max-h-[90%] my-10 bg-primary/50 rounded-2xl px-15 pt-2">
         <div className="flex justify-center shrink-0 z-300 mt-12 mb-8">
           <Image
             src={`/logo-secondary.png`}
@@ -67,11 +93,30 @@ const Login = () => {
         />
         <button
           type="button"
-          className="bg-yellow-600 text-xl font-light text-white px-10 py-4 rounded-xl my-12 cursor-pointer"
+          className="bg-yellow-600 text-xl font-light text-white px-10 py-4 rounded-xl mt-12 cursor-pointer"
           onClick={handleLogin}
         >
           Login for more recipies
         </button>
+
+        <button
+          type="button"
+          className="pt-8 mb-12 text-text text-sm cursor-pointer"
+          onClick={handleShowGuessDetails}
+        >
+          {showGuestDetails ? 'Hide' : 'Click here to find'} guest login details
+        </button>
+        {showGuestDetails && (
+          <div className="absolute right-2 z-300 bg-primary/80 text-white p-6 rounded-xl">
+            <p>Username: username1, username2</p>
+            <p>Password: password1, password2</p>
+          </div>
+        )}
+        {isLogin && !showGuestDetails && (
+          <div className="absolute w-fit right-2 items-center bg-amber-500/50 p-5 rounded-xl">
+            User credentials are incorrect!
+          </div>
+        )}
       </div>
     </form>
   );

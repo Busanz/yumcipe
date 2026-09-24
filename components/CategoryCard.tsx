@@ -2,8 +2,9 @@ import { useUserContext } from '@/contexts/userContext';
 import type { CategoryType, UserContextType } from '@/types/types';
 import Image from 'next/image';
 import Link from 'next/link';
-
 import { FiHeart } from 'react-icons/fi';
+
+const FALLBACK_IMAGE = '/recipe-placeholder.png';
 
 const CategoryCard = ({ strCategory, strCategoryThumb }: CategoryType) => {
   const { user, setUser } = useUserContext() as UserContextType;
@@ -23,11 +24,11 @@ const CategoryCard = ({ strCategory, strCategoryThumb }: CategoryType) => {
   };
 
   return (
-    <div className="flex flex-col w-full max-w-80 bg-primary/10 rounded-xl">
+    <div className="flex flex-col w-full max-w-60 md:max-w-70 lg:max-w-80 bg-primary/10 rounded-xl">
       <Link href={`categories/${strCategory.toLowerCase()}`}>
-        <div className="relative h-80 w-full">
+        <div className="relative h-60 md:h-70 lg:h-80 w-full">
           <Image
-            src={strCategoryThumb}
+            src={strCategoryThumb || FALLBACK_IMAGE}
             alt={`Image of ${strCategory}`}
             fill
             className="object-contain "

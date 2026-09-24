@@ -5,7 +5,7 @@ const Slogan = () => {
   return (
     <>
       <div className="flex flex-col items-center w-full">
-        <div className="relative flex w-full max-w-60 justify-center aspect-square">
+        <div className="relative flex w-full max-w-45 md:max-w-60 justify-center aspect-square">
           <Image
             src={`/logo-primary.png`}
             alt={`Yumcipe website logo`}
@@ -16,7 +16,7 @@ const Slogan = () => {
           />
         </div>
         <h1 className="heading-1">Every recipe tells a story.</h1>
-        <p className="text-center font-poiret text-primary text-2xl">
+        <p className="text-center font-poiret text-primary text-xl md:text-2xl">
           Rasavattōru collects them from every corner of the earth.
         </p>
       </div>

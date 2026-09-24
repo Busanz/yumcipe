@@ -12,26 +12,29 @@ const Breadcrumb = () => {
   if (pathSegments.length === 0) return;
 
   return (
-    <nav className="flex items-center gap-2 text-sm px-25 pt-5 bg-pink-300">
-      <Link href={'/'}>Home</Link>
+    <nav
+      aria-label="Breadcrumb"
+      className="flex w-full items-start gap-2 text-sm px-5 md:px-10 lg:px-25 pt-5"
+    >
+      <Link href={'/'} className=" hover:text-secondary">
+        Home
+      </Link>
       {pathSegments.map((segment, index) => {
         const href = '/' + pathSegments.slice(0, index + 1).join('/');
         const isLastSegment = index === pathSegments.length - 1;
 
         const breadcrumbLable =
           isLastSegment && lastSegment ? lastSegment : segment;
-        // .replace(/-/g, ' ')
-        // .replace(/\b\w/g, (char) => char.toUpperCase());
 
         return (
           <div key={href}>
             <span className="text-gray-400">/</span>
             {isLastSegment ? (
-              <span className="text-primary font-medium">
+              <span className="text-primary/50 font-medium underline underline-offset-3">
                 {breadcrumbLable}
               </span>
             ) : (
-              <Link href={href} className="text-gray-500 hover:text-primary">
+              <Link href={href} className="text-primary hover:text-secondary">
                 {breadcrumbLable}
               </Link>
             )}

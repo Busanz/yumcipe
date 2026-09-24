@@ -6,6 +6,8 @@ import Image from 'next/image';
 import { FiHeart } from 'react-icons/fi';
 import { useUserContext } from '@/contexts/userContext';
 
+const FALLBACK_IMAGE = '/recipe-placeholder.png';
+
 const RecipeCard = ({
   idMeal,
   strMeal,
@@ -32,7 +34,7 @@ const RecipeCard = ({
       <Link href={`/recipes/${idMeal}`}>
         <div className="relative h-80 w-full ">
           <Image
-            src={strMealThumb}
+            src={strMealThumb || FALLBACK_IMAGE}
             alt={`Image of ${strCategory}`}
             fill
             className="object-contain rounded-t-xl"

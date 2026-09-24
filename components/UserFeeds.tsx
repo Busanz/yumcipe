@@ -27,10 +27,10 @@ const UserFeeds = () => {
     <div className="flex flex-col w-full items-center">
       {user && (
         <>
-          <h1 className="text-center font-poiret text-primary text-2xl font-extrabold pt-5">
-            {user.fullName} welcome to Rasavattōru ...!
+          <h1 className="text-center font-poiret text-primary text-xl md:text-[1.3rem] lg:text-2xl font-extrabold pt-5">
+            {user.fullName} welcome to Rasavattōru...!
           </h1>
-          <h2 className="text-center font-poiret text-secondary text-2xl font-extrabold py-5 underline underline-offset-4">
+          <h2 className="text-center font-poiret text-secondary text-xl md:text-[1.3rem] lg:text-2xl font-extrabold py-5 underline underline-offset-4">
             Your favorite categories
           </h2>
           <div className="flex flex-row flex-wrap grow items-center justify-center w-full h-fit gap-5 text-lg">
@@ -39,12 +39,12 @@ const UserFeeds = () => {
                 <CategoryCard key={item.idCategory} {...item} />
               ))
             ) : (
-              <Link href={'/categories'} className="button-primary">
+              <Link href={'/categories'} className="button-primary text-center">
                 Selecet favorite categories
               </Link>
             )}
           </div>
-          <h2 className="text-center font-poiret text-secondary text-2xl font-extrabold pt-10 pb-6 underline underline-offset-4">
+          <h2 className="text-center font-poiret text-secondary text-xl md:text-[1.3rem] lg:text-2xl font-extrabold pt-10 pb-6 underline underline-offset-4">
             Your favorite recipes
           </h2>
 
@@ -54,7 +54,7 @@ const UserFeeds = () => {
                 <RecipeCard key={item.idMeal} {...item} />
               ))
             ) : (
-              <Link href={'/categories'} className="button-primary">
+              <Link href={'/categories'} className="button-primary text-center">
                 Selecet favorite categories
               </Link>
             )}

@@ -1,3 +1,5 @@
+import { IconType } from 'react-icons';
+
 export type UserType = {
   username: string;
   password: string;
@@ -41,4 +43,10 @@ export type CategoryContextType = {
 export type BreadcrumbContextType = {
   lastSegment: string;
   setLastSegment: (lastSegment: string) => void;
+};
+
+export type SocialLink = {
+  name: string;
+  href: string;
+  icon: IconType;
 };
