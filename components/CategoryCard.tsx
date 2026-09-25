@@ -24,9 +24,9 @@ const CategoryCard = ({ strCategory, strCategoryThumb }: CategoryType) => {
   };
 
   return (
-    <div className="flex flex-col w-full max-w-60 md:max-w-70 lg:max-w-80 bg-primary/10 rounded-xl">
+    <div className="flex flex-col w-full max-w-40 sm:max-w-60 md:max-w-70 lg:max-w-80 bg-primary/10 rounded-xl">
       <Link href={`categories/${strCategory.toLowerCase()}`}>
-        <div className="relative h-60 md:h-70 lg:h-80 w-full">
+        <div className="relative h-55 sm:h-60 md:h-70 lg:h-80 w-full">
           <Image
             src={strCategoryThumb || FALLBACK_IMAGE}
             alt={`Image of ${strCategory}`}

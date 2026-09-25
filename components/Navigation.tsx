@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useUserContext } from '@/contexts/userContext';
 import { UserContextType } from '@/types/types';
 import { useRouter, usePathname } from 'next/navigation';
-import { nav_links } from '@/data/navigations';
+import { nav_links } from '@/data/data';
 import { useEffect, useState } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 
@@ -42,10 +42,10 @@ const Navigation = ({ isOnFooter = false }: NavigationProps) => {
   }, [isMobileMenu]);
 
   return (
-    <header className="sticky top-0 w-full z-200">
+    <header className={`${!user ? '' : 'sticky top-0'} w-full z-200`}>
       <nav
         aria-label="Menu bar"
-        className={`relative flex ${isOnFooter ? 'bg-primary/80 text-gray-300 py-4 md:py-1 md:pl-4 md:pr-9 lg:px-25 font-light' : 'text-[#FFDE59] md:py-5 px-25 font-extralight'} text-lg lg:text-xl w-full ${user ? 'justify-between' : 'justify-center'} items-center`}
+        className={`relative flex ${isOnFooter ? 'bg-primary/97 text-gray-300 py-4 md:py-1 md:pl-4 md:pr-9 lg:px-25 font-light' : 'text-[#FFDE59] md:py-5 px-25 font-extralight'} text-lg lg:text-xl w-full ${user ? 'justify-between' : 'justify-center'} items-center`}
       >
         {!user ? (
           <div className="shrink-0">

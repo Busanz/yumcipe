@@ -41,7 +41,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
           <CategoryProvider>
             <BreadcrumbProvider>
               <Navigation isOnFooter={true} />
-              <main className="flex flex-1 flex-col w-full items-center">
+              <main className="relative flex flex-1 flex-col w-full items-center">
                 {children}
               </main>
               <Footer />

@@ -54,9 +54,9 @@ const Login = () => {
   }, [showGuestDetails]);
 
   return (
-    <form className="relative flex flex-col w-full items-center justify-center bg-[url('/login-bg-img.jpg')] bg-cover bg-center bg-no-repeat rounded-xl">
-      <div className="relative flex flex-col w-full max-w-[80%] max-h-[90%] my-10 bg-primary/50 rounded-2xl px-15 pt-2">
-        <div className="flex justify-center shrink-0 z-300 mt-12 mb-8">
+    <form className="relative flex flex-col w-full items-center bg-[url('/login-bg-img.jpg')] bg-cover bg-center bg-no-repeat rounded-xl">
+      <div className="relative flex flex-col items-start  w-full max-w-[95%] xl:max-w-[80%] md:max-h-[90%] my-2 md:my-10 bg-primary/50 rounded-2xl px-6 sm:px-10 md:px-30 lg:px-60 xl:px-40 pt-2">
+        <div className="flex justify-center shrink-0 z-300 mt-5 xl:mt-12 mb-8">
           <Image
             src={`/logo-secondary.png`}
             alt="logo secondary of website"
@@ -66,7 +66,11 @@ const Login = () => {
             className="h-20 w-auto"
           />
         </div>
-        <label htmlFor="username" className="text-xl text-white font-light">
+
+        <label
+          htmlFor="username"
+          className="text-lg xl:text-xl text-white font-light"
+        >
           Enter username
         </label>
         <input
@@ -75,11 +79,12 @@ const Login = () => {
           placeholder="Enter username"
           value={username}
           onChange={handleUsername}
-          className="bg-white rounded-md h-12 mt-3 px-5 py-2 text-xl font-light"
+          className="bg-white rounded-md h-12 mt-3 px-5 py-2 text-lg xl:text-xl font-light w-full max-w-md"
         />
+
         <label
           htmlFor="password"
-          className="text-xl text-white font-light mt-5"
+          className="text-lg xl:text-xl text-white font-light mt-5"
         >
           Enter password
         </label>
@@ -89,11 +94,11 @@ const Login = () => {
           placeholder="Enter password"
           value={password}
           onChange={handlePassword}
-          className="bg-white rounded-md h-12 px-5 py-2 mt-3 text-xl font-light tracking-widest leading-0"
+          className="bg-white rounded-md h-12 px-5 py-2 mt-3 text-lg xl:text-xl font-light tracking-widest leading-0 w-full max-w-md"
         />
         <button
           type="button"
-          className="bg-yellow-600 text-xl font-light text-white px-10 py-4 rounded-xl mt-12 cursor-pointer"
+          className="bg-yellow-600 text-lg xl:text-xl font-light text-white px-10 py-4 rounded-xl mt-12 cursor-pointer w-full max-w-md"
           onClick={handleLogin}
         >
           Login for more recipies
@@ -101,7 +106,7 @@ const Login = () => {
 
         <button
           type="button"
-          className="pt-8 mb-12 text-text text-sm cursor-pointer"
+          className="pt-8 mb-12 text-text text-sm w-full max-w-md cursor-pointer"
           onClick={handleShowGuessDetails}
         >
           {showGuestDetails ? 'Hide' : 'Click here to find'} guest login details

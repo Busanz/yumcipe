@@ -28,7 +28,7 @@ const Footer = () => {
             </Link>
           ))}
         </div>
-        <p className="flex justify-center text-text/30 my-5 text-sm text-center mt-15">
+        <p className="flex justify-center text-text/30 my-5 text-sm text-center mt-5 mb-15  md:mt-15">
           &copy; {new Date().getFullYear()} All rights reserved.
         </p>
       </div>

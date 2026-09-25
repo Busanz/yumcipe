@@ -15,7 +15,7 @@ const CategoriesPage = () => {
   const [visibleCount, setVisibleCount] = useState<number>(
     VISIBLE_CATEGORY_COUNT,
   );
-  console.log(categories);
+
   const refSection = useRef<HTMLElement>(null);
 
   const totalLenth = categories?.length ?? 0;
@@ -41,7 +41,7 @@ const CategoriesPage = () => {
   return (
     <section
       ref={refSection}
-      className="flex flex-col pt-8 lg:pt-10 px-5 lg:px-25 pb-15"
+      className="flex flex-col pt-8 lg:pt-10 px-2 lg:px-25 pb-15"
     >
       <div className="flex flex-col items-center">
         <h1 className="heading-1">Discover by Categories</h1>
@@ -50,7 +50,7 @@ const CategoriesPage = () => {
           personalized collection.
         </p>
       </div>
-      <div className="flex flex-wrap justify-center gap-1 sm:gap-2 md:gap-4 lg:gap-6 mx-2">
+      <div className="flex flex-wrap justify-center gap-1 sm:gap-2 md:gap-4 lg:gap-6">
         {user &&
           categories! &&
           visibleCategories?.map((item) => (

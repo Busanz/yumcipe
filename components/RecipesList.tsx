@@ -36,7 +36,7 @@ const RecipesList = ({ recipes, strCategory }: RecipesListProps) => {
   return (
     <>
       <div
-        className={`flex flex-wrap lg:px-25 justify-center gap-5 w-full ${isAllRecipes ? 'pb-15' : ''}`}
+        className={`flex flex-wrap px-1 lg:px-25 justify-center gap-2 md:gap-4 lg:gap-5 w-full ${isAllRecipes ? 'pb-15' : ''}`}
       >
         {firstTenRecepes &&
           firstTenRecepes.map((item) => (

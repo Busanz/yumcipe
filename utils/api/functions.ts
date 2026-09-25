@@ -11,11 +11,11 @@ const fetchRandomMealByLetter = async (index: string) => {
   return recipeByLetter && recipeByLetter.strMealThumb ? recipeByLetter : null;
 };
 
-export const getFeaturedRecipes = async () => {
+export const getFeaturedRecipes = async (lenth: number = 4) => {
   let recipes: RecipeType[] | null = [];
   let attempts: number = 0;
 
-  while (recipes.length < 4 && attempts < MAX_ATTEMPTS) {
+  while (recipes.length < lenth && attempts < MAX_ATTEMPTS) {
     const recipe = await fetchRandomMealByLetter(String(attempts));
     attempts++;
     if (recipe && !recipes.some((item) => item.idMeal === recipe.idMeal)) {

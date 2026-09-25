@@ -7,14 +7,12 @@ const Breadcrumb = () => {
   const pathname = usePathname();
   const { lastSegment } = useBreadcrumbContext();
   const pathSegments = pathname.split('/').filter(Boolean).slice(0, 2);
-
-  console.log(pathSegments);
   if (pathSegments.length === 0) return;
 
   return (
     <nav
       aria-label="Breadcrumb"
-      className="flex w-full items-start gap-2 text-sm px-5 md:px-10 lg:px-25 pt-5"
+      className="sticky top-5 flex w-full items-start gap-2 text-sm px-5 md:px-10 lg:px-25 pt-5 z-10"
     >
       <Link href={'/'} className=" hover:text-secondary">
         Home

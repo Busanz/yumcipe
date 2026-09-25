@@ -30,9 +30,9 @@ const RecipeCard = ({
   };
 
   return (
-    <div className="flex flex-col w-full max-w-80 rounded-xl bg-primary/10 ">
+    <div className="flex flex-col w-full max-w-55 sm:max-w-60 md:max-w-70 lg:max-w-80 rounded-xl bg-primary/10 ">
       <Link href={`/recipes/${idMeal}`}>
-        <div className="relative h-80 w-full ">
+        <div className="relative w-full h-55 sm:h-60 md:h-70 lg:h-80">
           <Image
             src={strMealThumb || FALLBACK_IMAGE}
             alt={`Image of ${strCategory}`}
@@ -43,8 +43,8 @@ const RecipeCard = ({
           />
         </div>
       </Link>
-      <div className="flex justify-between py-4 px-4 items-center">
-        <h2 className="text-primary text-left font-light text-lg text-wrap w-full mr-3">
+      <div className="flex justify-between items-start py-4 px-2 md:px-4">
+        <h2 className="text-primary text-left font-light text-[0.95rem] md:text-lg text-wrap w-full mr-3">
           {strMeal}
         </h2>
         <FiHeart
